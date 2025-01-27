@@ -50,7 +50,7 @@ wget https://raw.githubusercontent.com/ArmDeveloperEcosystem/PyTorch-arm-patches
 wget https://raw.githubusercontent.com/ArmDeveloperEcosystem/PyTorch-arm-patches/main/0001-Feat-Enable-int4-quantized-models-to-work-with-pytor.patch
 git apply 0001-Feat-Enable-int4-quantized-models-to-work-with-pytor.patch
 git apply --whitespace=nowarn 0001-modified-generate.py-for-cli-and-browser.patch
-./install_requirements.sh
+pip install -r requirements.txt
 ```
 {{% notice Note %}} You will need Python version 3.10 to apply these patches. This is the default version of Python installed on an Ubuntu 22.04 Linux machine. {{% /notice %}}
 
@@ -66,12 +66,19 @@ pip uninstall torchao && cd ao/ && rm -rf build && python setup.py install
 ### Login to Hugging Face
 You can now download the LLM.
 
-[Generate an Access Token](https://huggingface.co/settings/tokens) to authenticate your identity with Hugging Face Hub. A token with read-only access is sufficient. Log in to the Hugging Face repository and enter your Access Token key from Hugging face. 
+Install the [Hugging Face CLI](https://huggingface.co/docs/huggingface_hub/main/en/guides/cli) application.
+```sh
+pip install -U "huggingface_hub[cli]"
+```
+
+[Generate an Access Token](https://huggingface.co/settings/tokens) to authenticate your identity with Hugging Face Hub. A token with read-only access is sufficient.
+
+Log in to the Hugging Face repository and enter your Access Token key from Hugging face. 
 
 ```sh
 huggingface-cli login
 ```
-Before you can download the model, accept the license agreement at: [Meta Llama 3.1](https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct)
+Before you can download the model, you must accept the license agreement at: [Meta Llama 3.1](https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct).
 
 ### Downloading and Quantizing the LLM Model
 

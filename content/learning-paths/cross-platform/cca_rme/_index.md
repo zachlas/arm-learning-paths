@@ -32,13 +32,15 @@ tools_software_languages:
     - Coding
     - Trusted Firmware
     - Arm Development Studio
+    - RME
+    - CCA
 
 ### Cross-platform metadata only
 shared_path: true
 shared_between:
     - servers-and-cloud-computing
     - laptops-and-desktops
-    - smartphones-and-mobile
+    - mobile-graphics-and-gaming
 
 ### FIXED, DO NOT MODIFY
 # ================================================================================
